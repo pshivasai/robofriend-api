@@ -22,23 +22,6 @@ SELECT *
 FROM users
 `;
 
-// users = []
-
-// client.query(query, (err, res) => {
-//     for (let row of res.rows) {
-//        users.push(row)
-//     }
-// });
-
-// app.get('/',(req,res) => {
-// 	client.query(query, (err, result) => {
-//        for (let row of result.rows) {
-//       		let user = []
-//       		user.push(row)
-//       		res.send(user)
-//     }
-// 	})
-// })
 
 app.get('/',(req,res) => {
 	client.query(qs, (err, result) => {
@@ -59,12 +42,3 @@ app.post('/addme', (req,res) => {
 app.listen(3000, () =>{
 	console.log('app is working on port 3000')
 });
-
-
-
-/*
-/ -- res = this is working
-/addme --> POSt = name
-/update --> PUT = add new name card
-
-*/
