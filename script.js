@@ -39,6 +39,6 @@ app.post('/addme', (req,res) => {
 })
 
 
-app.listen(3000, () =>{
-	console.log('app is working on port 3000')
+app.listen(process.env.PORT, () =>{
+	console.log(`app is working on port ${process.env.PORT}`)
 });
