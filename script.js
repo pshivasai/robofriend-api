@@ -4,7 +4,7 @@ const cors = require('cors')
 const { Client }= require('pg');
 
 const client = new Client({
-   connection: process.env.DATABASE_URL,
+   connectionString: process.env.DATABASE_URL,
    ssl: true
 });
 
@@ -21,15 +21,12 @@ FROM users
 `;
 
 
-// app.get('/',(req,res) => {
-// 	client.query(qs, (err, result) => {
-//       	res.send(result.rows)
-// 	})
-// })
-
 app.get('/',(req,res) => {
-	res.send('its working')
+	client.query(qs, (err, result) => {
+      	res.send(result.rows)
+	})
 })
+
 
 
 
