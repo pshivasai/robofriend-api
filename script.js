@@ -23,10 +23,14 @@ FROM users
 `;
 
 
+// app.get('/',(req,res) => {
+// 	client.query(qs, (err, result) => {
+//       	res.send(result.rows)
+// 	})
+// })
+
 app.get('/',(req,res) => {
-	client.query(qs, (err, result) => {
-      	res.send(result.rows)
-	})
+	res.send('its working')
 })
 
 
