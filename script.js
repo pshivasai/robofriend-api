@@ -1,8 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-
-
 const { Client }= require('pg');
 
 const client = new Client({
