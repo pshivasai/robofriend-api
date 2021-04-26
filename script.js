@@ -15,17 +15,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const qs = `
-SELECT *
-FROM users
-`;
 
 
-app.get('/',(req,res) => {
-	client.query(qs, (err, result) => {
+app.put('/',(req,res) => {
+	client.query( `SELECT * FROM users`, (err, result) => {
       	res.send(result.rows)
 	})
-})
+});
 
 
 
@@ -34,6 +30,7 @@ app.post('/addme', (req,res) => {
 	const { name } = req.body
 	client.query(`INSERT INTO users (name)
 	VALUES ('${name}')`)
+  console.log(name)
 	res.send('success')
 })
 
